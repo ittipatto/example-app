@@ -37,3 +37,4 @@ Route::middleware(['auth.admin'])->group(function() {
     Route::delete('/content/{id}', [ContentController::class,'destroy'] );
 });
 
+// Hello
