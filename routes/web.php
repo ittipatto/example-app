@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContentController;
+use App\Http\Controllers\GunController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,8 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'showLogin']);
 Route::post('/login', [AuthController::class, 'checkLogin']);
 Route::get('/logout', [AuthController::class, 'logout']);
+
+Route::get('/gun', [GunController::class,'index'] );
 
 Route::middleware(['auth.admin'])->group(function() {
     Route::get('/content', [ContentController::class,'index'] );
